@@ -2,6 +2,7 @@
   background-color: rgb(194, 190, 190);
   display: flex;
   justify-content: center;
+  height: auto;
 }
 
 .content{
@@ -16,6 +17,7 @@
   font-weight: bold;
   font-family: "fangsong";
   margin: 3px;
+  text-decoration: underline;
 }
 
 .radiobtn{
@@ -140,7 +142,7 @@ input:focus
     width: 60%;
     background-color: rgb(233, 233, 233);
     padding: 25px;
-    height: 100vh;
+    height: auto;
   }
 
   .viewaddList{
