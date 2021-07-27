@@ -225,7 +225,7 @@ function App() {
                 <div className="inputboxshow">
                   <label className="lableview">Pincode<div className="starView">*</div></label>
                   <div>
-                    <input value={values.pincode} onChange={handleInputChange} type="text" name="pincode" className={emptydata.includes("pincode") ? "inputboxvalid" : "inputbox"} />
+                    <input value={values.pincode} onChange={handleInputChange} type="number" name="pincode" className={emptydata.includes("pincode") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{emptydata.includes("pincode") && <div className="errorMessege">Field required</div>}</div>
                 </div>
@@ -247,7 +247,7 @@ function App() {
               </div>
             </div>
           </form>
-          {showAddData && showAddData.length > 0 ? <div className="viewList" onClick={viewList}>View Appications</div> : ""}
+          {showAddData && showAddData.length > 0 ? <div className="viewList" onClick={viewList}>View Appications</div> : <div className="emptyview"></div>}
         </div>
 
       }

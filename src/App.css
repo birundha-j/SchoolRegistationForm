@@ -8,7 +8,7 @@
 .content{
   width: 40%;
   background-color: white;
-  height: 100vh;
+  height: auto;
 }
 
 .contentTitle{
@@ -90,6 +90,10 @@ input:focus
   font-size: 16px;
 }
 
+.emptyview{
+  height: 62px;
+}
+
 .btnshow{
   display: flex;
   margin-top: 24px;
@@ -98,7 +102,7 @@ input:focus
 .buttonview{
   font-size: 16px;
   border: 1px solid gray;
-  width: 33%;
+  width: 40%;
   padding: 9px 10px;
   text-align: center;
   background: gray;
