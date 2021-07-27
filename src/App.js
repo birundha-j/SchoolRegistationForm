@@ -249,10 +249,7 @@ function App() {
           </form>
           {showAddData && showAddData.length > 0 ? <div className="viewList" onClick={viewList}>View Appications</div> : <div className="emptyview"></div>}
         </div>
-
       }
-
-
     </div>
   );
 }
