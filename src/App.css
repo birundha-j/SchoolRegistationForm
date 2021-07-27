@@ -140,6 +140,7 @@ input:focus
     padding-right: 68px;
     text-decoration: underline;
     cursor: pointer;
+    height: 135px;
   }
 
   .showContent{
