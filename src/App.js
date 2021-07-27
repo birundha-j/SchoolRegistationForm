@@ -18,9 +18,7 @@ function App() {
 
 
   const handleInputChange = (e) => {
-    console.log(e.target.id, "var")
     const { name, value, id } = e.target;
-
     if (name === "gender") {
       setValues({
         ...values,
@@ -32,7 +30,6 @@ function App() {
         [name]: value,
       });
     }
-
     setEmptydata([])
   };
 
@@ -62,18 +59,15 @@ function App() {
     setValues(initialValues)
   }, [values])
 
-  console.log(values, "fiupi")
-
   return (
     <div className="Container">
-
       {showList ?
         <div className="showContent">
           <div className="contentTitle">Student Registation List</div>
           {showAddData && showAddData.map((data, index) => {
             return (
               <div className="showListcontainer">
-                {index + 1}
+                <div className="indexvalue">Applicant :{index + 1}</div>
                 <div className="viewaddList">
                   <label className="lablelist">First Name</label>{"  :   "}<div className="datalist">{data.firstname}</div>
                 </div>
@@ -84,7 +78,7 @@ function App() {
                   <label className="lablelist">Date Of Birth</label>{"  :   "}<div className="datalist">{data.dob}</div>
                 </div>
                 <div className="viewaddList">
-                  <label className="lablelist">Gender</label>{"  :   "}<div className="datalist">{data.gender === 1 ? "Male" : "Female"}</div>
+                  <label className="lablelist">Gender</label>{"  :   "}<div className="datalist">{data.gender == 1 ? "Male" : "Female"}</div>
                 </div>
                 <div className="viewaddList">
                   <label className="lablelist">Father's Name</label>{"  :   "}<div className="datalist">{data.fathername}</div>
@@ -120,12 +114,9 @@ function App() {
             )
           })}
           <div className="backbtn">
-            {/* <button className="buttonview" onClick={(e) => clearData(e)}>Clear</button> */}
-
             <button className="backbuttonview" onClick={() => setShowList(false)}>Back</button>
           </div>
         </div>
-
         :
         <div className="content">
           <div className="contentTitle">Student Registation Form</div>
@@ -134,13 +125,15 @@ function App() {
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">First Name<div className="starView">*</div></label>
-                  <div><input value={values.firstname} onChange={handleInputChange} type="text" name="firstname" className={required && emptydata.includes("firstname") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.firstname} onChange={handleInputChange} type="text" name="firstname" className={required && emptydata.includes("firstname") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("firstname") && <div className="errorMessege">Field required</div>}</div>
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">Last Name<div className="starView">*</div></label>
-                  <div><input value={values.lastname} onChange={handleInputChange} type="text" name="lastname" className={required && emptydata.includes("lastname") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.lastname} onChange={handleInputChange} type="text" name="lastname" className={required && emptydata.includes("lastname") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("lastname") && <div className="errorMessege">Field required</div>}</div>
                 </div>
@@ -148,10 +141,10 @@ function App() {
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">D.O.B<div className="starView">*</div></label>
-                  <div><input value={values.dob} onChange={handleInputChange} type="date" name="dob" className={required && emptydata.includes("dob") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.dob} onChange={handleInputChange} type="date" name="dob" className={required && emptydata.includes("dob") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("dob") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">Gender<div className="starView">*</div></label>
@@ -170,14 +163,16 @@ function App() {
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">Father's Name<div className="starView">*</div></label>
-                  <div> <input value={values.fathername} onChange={handleInputChange} type="text" name="fathername" className={required && emptydata.includes("fathername") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.fathername} onChange={handleInputChange} type="text" name="fathername" className={required && emptydata.includes("fathername") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("fathername") && <div className="errorMessege">Field required</div>}</div>
 
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">Father's Occupation<div className="starView">*</div></label>
-                  <div>  <input value={values.fatherwork} onChange={handleInputChange} type="text" name="fatherwork" className={required && emptydata.includes("fatherwork") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.fatherwork} onChange={handleInputChange} type="text" name="fatherwork" className={required && emptydata.includes("fatherwork") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("fatherwork") && <div className="errorMessege">Field required</div>}</div>
 
@@ -186,26 +181,26 @@ function App() {
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">Mother's Name<div className="starView">*</div></label>
-                  <div> <input value={values.mothername} onChange={handleInputChange} type="text" name="mothername" className={required && emptydata.includes("mothername") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.mothername} onChange={handleInputChange} type="text" name="mothername" className={required && emptydata.includes("mothername") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("mothername") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">Mother's Occupation<div className="starView">*</div></label>
-                  <div><input value={values.motherwork} onChange={handleInputChange} type="text" name="motherwork" className={required && emptydata.includes("motherwork") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.motherwork} onChange={handleInputChange} type="text" name="motherwork" className={required && emptydata.includes("motherwork") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("motherwork") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
               </div>
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">Address<div className="starView">*</div></label>
-                  <div> <input value={values.address} onChange={handleInputChange} type="text" name="address" className={required && emptydata.includes("address") ? "inputboxvalid" : "inputboxaddress"} />
+                  <div>
+                    <input value={values.address} onChange={handleInputChange} type="text" name="address" className={required && emptydata.includes("address") ? "inputboxvalid" : "inputboxaddress"} />
                   </div>
                   <div>{required && emptydata.includes("address") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
               </div>
               <div className="formFields">
@@ -214,27 +209,27 @@ function App() {
                   <div> <input value={values.city} onChange={handleInputChange} type="text" name="city" className={required && emptydata.includes("city") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("city") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">District<div className="starView">*</div></label>
-                  <div><input value={values.district} onChange={handleInputChange} type="text" name="district" className={required && emptydata.includes("district") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.district} onChange={handleInputChange} type="text" name="district" className={required && emptydata.includes("district") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("district") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
               </div>
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">State<div className="starView">*</div></label>
-                  <div> <input value={values.state} onChange={handleInputChange} type="text" name="state" className={required && emptydata.includes("state") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.state} onChange={handleInputChange} type="text" name="state" className={required && emptydata.includes("state") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("state") && <div className="errorMessege">Field required</div>}</div>
-
                 </div>
                 <div className="inputboxshow">
                   <label className="lableview">Pincode<div className="starView">*</div></label>
-                  <div><input value={values.pincode} onChange={handleInputChange} type="text" name="pincode" className={required && emptydata.includes("pincode") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.pincode} onChange={handleInputChange} type="text" name="pincode" className={required && emptydata.includes("pincode") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("pincode") && <div className="errorMessege">Field required</div>}</div>
                 </div>
@@ -242,7 +237,8 @@ function App() {
               <div className="formFields">
                 <div className="inputboxshow">
                   <label className="lableview">Contact Number<div className="starView">*</div></label>
-                  <div> <input value={values.contact} onChange={handleInputChange} type="number" name="contact" className={required && emptydata.includes("contact") ? "inputboxvalid" : "inputbox"} />
+                  <div>
+                    <input value={values.contact} onChange={handleInputChange} type="number" name="contact" className={required && emptydata.includes("contact") ? "inputboxvalid" : "inputbox"} />
                   </div>
                   <div>{required && emptydata.includes("contact") && <div className="errorMessege">Field required</div>}</div>
                 </div>

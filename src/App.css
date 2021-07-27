@@ -6,7 +6,8 @@
 
 .content{
   width: 40%;
-  background-color: white;height: auto;
+  background-color: white;
+  height: 100vh;
 }
 
 .contentTitle{
@@ -140,6 +141,7 @@ input:focus
     width: 60%;
     background-color: rgb(233, 233, 233);
     padding: 25px;
+    height: 100vh;
   }
 
   .viewaddList{
@@ -160,4 +162,10 @@ input:focus
     margin: 15px 0px 0px 0px;
     border-bottom: 1px solid gray;
     padding-bottom: 10px;
+  }
+
+  .indexvalue{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
   }
